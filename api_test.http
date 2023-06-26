@@ -3,12 +3,12 @@ POST https://localhost:6443/v1/employee
 Content-Type: application/json
 
 {
-  "first_name": "Somchai",
-  "last_name": "Jaidee",
-  "email": "somchai@mymail.com",
+  "first_name": "Kongsak",
+  "last_name": "Limpitikeat",
+  "email": "keng@mymail.com",
   "age": 40,
   "department": "IT",
-  "salary": 30000
+  "salary": 20000
 }
 
 ### Filter employee

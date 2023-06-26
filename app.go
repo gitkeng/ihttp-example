@@ -27,7 +27,7 @@ func main() {
 	if !isRedisCfgFound {
 		log.Fatalf("Error: redis config not found")
 	}
-
+	
 	ms, err := ihttp.New(
 		ihttp.WithAPIConfig(apiCfg),
 		ihttp.WithLogConfig(logCfg),

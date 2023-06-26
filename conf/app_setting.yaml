@@ -9,6 +9,44 @@ ssl-enable: true
 ssl-port: 6443
 ssl-cert-file: "./certs/localhost.crt"
 ssl-key-file: "./certs/localhost.key"
+CORS:
+  # allow-origins defines a list of origins that may access the resource.
+  # Optional. *.
+  allow-origins:
+    - "http://127.0.0.1:5500"
+  # allow-methods defines a list methods allowed when accessing the resource.
+  # This is used in response to a preflight request.
+  # Optional. Default value GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS.
+  #allow-methods:
+  #  - "GET"
+  #  - "PUT"
+  #  - "POST"
+  #  - "DELETE"
+  #  - "OPTIONS"
+  # allow-headers defines a list of request headers that can be used when
+  # making the actual request. This is in response to a preflight request.
+  # Optional. Default value Origin, Content-Type, Accept, Accept-Encoding, Access-Control-Allow-Headers,
+  # Access-Control-Allow-Methods, Access-Control-Allow-Origin,
+  # X-Requested-With, Authorization, X-CSRF-Token, X-Forwarded-For, X-Real-IP.
+  #allow-headers:
+  #  - "Origin"
+  #  - "Content-Type"
+  #  - "Accept"
+  #  - "Authorization"
+  # allow-credentials indicates whether or not the response to the request
+  # can be exposed when the credentials flag is true. When used as part of
+  # a response to a preflight request, this indicates whether or not the
+  # actual request can be made using credentials.
+  # Optional. Default value false.
+  allow-credentials: true
+  # expose-headers defines a whitelist headers that clients are allowed to
+  # access.
+  # Optional. Default value ""
+  # expose-headers:
+  # MaxAge indicates how long (in seconds) the results of a preflight request
+  # can be cached.
+  # Optional. Default value 0
+  max-age: 0
 
 #setting log file location if empty will log to stdout only
 log-file-location: "./logs/app.log"
