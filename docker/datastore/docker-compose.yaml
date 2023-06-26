@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  pgdb:
+    image: postgres:14
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      POSTGRES_USER: 'pgadmin'
+      POSTGRES_PASSWORD: 'Ac1qEze89dX1jyz'
+      POSTGRES_DB: 'exampledb'
+      PGDATA: '/var/lib/postgresql/data'
+      TZ: 'Asia/Bangkok'
+    ports:
+      - '5432:5432'
+    volumes:
+      - "$PWD/pq-data:/var/lib/postgresql/data"
+
+
+  rediscache:
+    image: redis
+    environment:
+      TZ: 'Asia/Bangkok'
+    ports:
+      - '6379:6379'
+    volumes:
+      - "$PWD/cache:/data"
+      - "$PWD/redis.conf:/usr/local/etc/redis/redis.conf"
+    command: redis-server /usr/local/etc/redis/redis.conf
